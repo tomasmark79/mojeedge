@@ -26,8 +26,8 @@ CHANNEL_IDS = {
     1359910160277045341: ("aistrejda obecna",    "cs"),
     846741885036396564:  ("geekboy pokec",    "cs")
 }
-#TTS_VOICE = "cs-CZ-AntoninNeural"
-TTS_VOICE = "cs-CZ-VlastaNeural"
+TTS_VOICE = "cs-CZ-AntoninNeural"
+#TTS_VOICE = "cs-CZ-VlastaNeural"
 TTS_RATE = "+0%"   # rychlost mluvení: např. "-10%", "+0%", "+30%"
 IGNORE_BOTS = True
 ALLOWED_USERS: list[str] = []  # username nebo user id jako string; prázdné = vše
@@ -232,7 +232,7 @@ async def run_gateway(token: str, channel_ids: dict[int, tuple[str, str]], voice
                             clean = await translate(clean, session)
                         flags = " ✍" if diac_restored else ""
                         print(f"[{author.get('username')}]{flags} {text}", flush=True)
-                        tts_text = f"{sanitize(author.get('username', ''))} píše: {clean}"
+                        tts_text = f"{sanitize(author.get('username', ''))} : {clean}"
                         await queue.put(tts_text)
 
                 # RECONNECT
