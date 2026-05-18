@@ -28,7 +28,7 @@ CHANNEL_IDS = {
 }
 #TTS_VOICE = "cs-CZ-AntoninNeural"
 TTS_VOICE = "cs-CZ-VlastaNeural"
-TTS_RATE = "-10%"   # rychlost mluvení: např. "-10%", "+0%", "+30%"
+TTS_RATE = "+0%"   # rychlost mluvení: např. "-10%", "+0%", "+30%"
 IGNORE_BOTS = True
 ALLOWED_USERS: list[str] = []  # username nebo user id jako string; prázdné = vše
 TRANSLATE = True
