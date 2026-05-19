@@ -265,7 +265,7 @@ async def run_gateway(token: str, channel_ids: dict[int, tuple[str, str]], voice
                                     clean = await translate(clean, session)
                                 flags = " ✍" if diac_restored else ""
                                 print(f"[{channel_name}][{author.get('username')}]{flags} {text}", flush=True)
-                                tts_text = f"{sanitize(author.get('username', ''))} : {clean}"
+                                tts_text = f"{channel_name} {sanitize(author.get('username', ''))} : {clean}"
                                 await queue.put(tts_text)
 
                         # RECONNECT
